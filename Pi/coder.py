@@ -6,6 +6,7 @@ def encode(inputFilename, outputFilename):
     with open(inputFilename, 'rb') as f:
         data = f.read().encode('hex').upper()
         chunks = [data[i:i+chunkSize] for i in range(0, len(data), chunkSize)]
+        print chunks
 
     # TODO:
     #   - Encode filename/type, save to outputFilename
@@ -20,3 +21,5 @@ def decode(inputFilename, outputDirectory):
     #   - Decode filename/type
     #   - Get indices, compute to hex
     #   - Decode hex, save to outputDirectory
+
+encode('README.md', '..')
