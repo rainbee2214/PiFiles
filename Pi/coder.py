@@ -45,6 +45,7 @@ def getPiWithTwoHex():
 def getIndex(piDictionary, dataChunk):
 
     return 
+
 def encode(inputFilename, outputFilename, piDictionary):
     with open(inputFilename, 'rb') as f:
         data = f.read().encode('hex').upper()
@@ -81,12 +82,20 @@ def convertBase(incomingHex):
 
     return base35
 
+def printFile(inputFilename):
+    # with open(inputFilename, 'rb') as f:
+    #     data = f.read().encode('hex').upper()
+    #     print data
+
+    inFile = open(inputFilename, 'rb')
+    for line in inFile:
+        print line
 
 def main(argv):
     script, filename = sys.argv
                                 
-        
-    encode(filename, '_Encoded.pi', getPiWithTwoHex())
+    printFile(filename)  
+    # encode(filename, '_Encoded.pi', getPiWithTwoHex())
 
 
 
