@@ -3,7 +3,7 @@ import itertools
 from time import time
 
 validHex = '0123456789ABCDEF'
-twoByte = itertools.product(validHex, repeat=4)
+twoHalfByte = itertools.product(validHex, repeat=5)
 
 foundIndices = []
 sectionsOfPi = []
@@ -25,11 +25,11 @@ print "1000 strings of 1000 length of pi took", endOfStrings - startOfStrings
 
 startOfPattern = time()
 
-for pattern in twoByte:
+for pattern in twoHalfByte:
 	foundAt = -1
 	index = 0
 	for string in sectionsOfPi:
-		foundAt = string.find(pattern[0] + pattern[1] + pattern[2] + pattern[3])
+		foundAt = string.find(pattern[0] + pattern[1] + pattern[2] + pattern[3] + pattern[4])
 		if foundAt > -1:
 			foundIndices.append((pattern, foundAt + (index * 1000)))
 			break
@@ -39,7 +39,7 @@ for pattern in twoByte:
 
 endOfPattern = time()
 
-print "all 2 byte patterns took", endOfPattern - startOfPattern
+print "all 2.5 byte patterns took", endOfPattern - startOfPattern
 
-with open("02Byte.dat", 'w') as f:
+with open("02halfByte.dat", 'w') as f:
     data = f.write('\n'.join('%s %s' % x for x in foundIndices))
