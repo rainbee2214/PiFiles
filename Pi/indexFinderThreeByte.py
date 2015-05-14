@@ -39,7 +39,7 @@ for pattern in threeByte:
 
 endOfPattern = time()
 
-print "all 2.5 byte patterns took", endOfPattern - startOfPattern
+print "all 3 byte patterns took", endOfPattern - startOfPattern
 
 with open("03byte.dat", 'w') as f:
     data = f.write('\n'.join('%s %s' % x for x in foundIndices))
