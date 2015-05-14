@@ -3,7 +3,7 @@ import itertools
 from time import time
 
 validHex = '0123456789ABCDEF'
-repeat = 1
+repeat = 2
 
 threeBit = itertools.product(validHex, repeat=repeat)
 foundIndices = []
@@ -16,7 +16,7 @@ for x in threeBit:
     index = 0
     while not found:
         test = pi.getHexFromIndex(index)
-        if x[0] == test[0]:
+        if x[0] == test[0] and x[1] == test[1]:
             # print "Match!", x, test, index
             found = True
             foundIndices.append((x, index))
@@ -25,7 +25,7 @@ for x in threeBit:
 
 end = time()
 
-print "one took", (end - start)/60, ":", (end - start)%60
+print "one byte took", (end - start)/60, ":", (end - start)%60
 
-with open("00halfByte.dat", 'w') as f:
+with open("01byte.dat", 'w') as f:
     data = f.write('\n'.join('%s %s' % x for x in foundIndices))
