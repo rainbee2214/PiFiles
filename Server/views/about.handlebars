@@ -1,0 +1,142 @@
+<div class="reveal">
+
+	<div class="slides">
+
+		<section>
+			<h1>PiFiles</h1>
+			<p>Everything in &#960;</p>
+			<p>
+				<small><a href="http://github.com/rainbee2214">Sarah MacDonald</a> / <a href="http://github.com/frozenfire92">Joel Kuntz</a></small>
+			</p>
+		</section>
+
+		<section>
+			<section>
+				<h2>Want to watch next weeks Game of Thrones?</h2>
+			</section>
+			<section>
+				<p>Me too, but HBO won't give me the index files</p>
+			</section>
+		</section>
+
+		<section>
+			<section>
+				<h2>Wait, what?!?</h2>
+			</section>
+			<section>
+				<p>&#960; is an irrational number</p>
+			</section>
+			<section>
+				<p>Meaning it goes on forever with no known pattern</p>
+			</section>
+			<section>
+				<p>Because of this, every possible binary pattern is contained within it</p>
+			</section>
+		</section>
+
+		<section>
+			<section>
+				<h2>So what does this mean for me?</h2>
+			</section>
+			<section>
+				<p>If you know the correct indices, you can construct any binary file</p>
+			</section>
+			<section>
+				<p>Meaning everything that does, has, or ever will exist is in &#960;</p>
+			</section>
+		</section>
+
+		<section>
+			<section>
+				<h2>So how does it work?</h2>
+			</section>
+			<section>
+				<p>
+					Using the <a href="http://en.wikipedia.org/wiki/Bailey%E2%80%93Borwein%E2%80%93Plouffe_formula">Bailey–Borwein–Plouffe Formula</a> (BBP) we are able to calculate any n<sup>th</sup> binary digit of &#960; using base 16 math
+				</p>
+			</section>
+			<section>
+				<p>PiFiles will take any file as input and chunk it up into binary</p>
+			</section>
+			<section>
+				<p>It then finds matching indices of &#960; that contain that binary string</p>
+			</section>
+			<section>
+				<p>When completed you will recieve an index file which can be shared with anyone with PiFiles to decode to the same binary input file</p>
+			</section>
+		</section>
+
+		<section>
+			<section>
+				<h2>Neat, eh?</h2>
+			</section>
+			<section>
+				<p>We also have a simple web app that converts between plain text and indices</p>
+			</section>
+		</section>
+
+		<section>
+			<section>
+				<h2>Limitations?</h2>
+			</section>
+			<section>
+				<p>You just had to ask</p>
+			</section>
+			<section>
+				<p>It takes a while to compute indices beyond 10 million</p>
+			</section>
+			<section>
+				<p>Using IEEE 64 bit floating point arithmetic it loses accuracy beyond 11.8 million</p>
+			</section>
+			<section>
+				<p>If 128 bit arithmetic can be used this accuracy gets close to 10<sup>14</sup></p>
+			</section>
+			<section>
+				<p>Index files are unfortunately larger than input files</p>
+			</section>
+		</section>
+
+		<section>
+			<section>
+				<h2>What we learned</h2>
+			</section>
+			<section>
+				<p>Deployments to Azure with Juju</p>
+			</section>
+			<section>
+				<p>Some neat tricks with Python</p>
+			</section>
+			<section>
+				<p>Some cool math</p>
+			</section>
+			<section>
+				<p>
+					Being sick and coding is hard
+					<br>
+					<small>AKA doesn't happen</small>
+				</p>
+			</section>
+			<section>
+				<p>Even if this isn't practical...</p>
+			</section>
+			<section>
+				<p>...it was still worth doing</p>
+			</section>
+		</section>
+
+	</div>
+
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+
+	Reveal.initialize({
+		controls: true,
+		progress: true,
+		center: true,
+		transition: 'slide', // none/fade/slide/convex/concave/zoom
+	});
+
+</script>
