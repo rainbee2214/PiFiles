@@ -3,7 +3,6 @@ import pi
 import string
 import uuid
 
-chunkSize = 2
 BASE_LIST = string.digits + string.letters + string.punctuation
 BASE_DICT = dict((c, i) for i, c in enumerate(BASE_LIST))
 
@@ -27,7 +26,7 @@ def base_encode(integer, base=BASE_LIST):
 
 #Return a dictionary with the data chunks : index in file
 def getPiWithTwoHex():
-    piIndexFilename = "Data/01byte.dat"
+    piIndexFilename = "Data/01Byte.dat"
     piIndex = open(piIndexFilename)
 
     piList = []
@@ -36,66 +35,131 @@ def getPiWithTwoHex():
         # print line
         piDictionary[line[2:3]+line[7:8]] = line[11:len(line) - 1]
         piList.append([line[2:3]+line[7:8], line[11:len(line) - 1]])
+    # print piList
+    # print piDictionary
+    return piDictionary
+
+def getPiWithThreeHex():
+    piIndexFilename = "Data/01HalfByte.dat"
+    piIndex = open(piIndexFilename)
+
+    piList = []
+    piDictionary = {}
+    for line in piIndex:
+        # print line        
+        piDictionary[line[2:3]+line[7:8]+line[12:13]] = line[16:len(line) - 1]
+        piList.append([line[2:3]+line[7:8]+line[12:13], line[16:len(line) - 1]])
+
 
     # print piList
     # print piDictionary
     return piDictionary
 
-#Takes a data chunk and finds the appropriate pi index from the current file [right now works for 01byte.dat]
-def getIndex(piDictionary, dataChunk):
+def getPiWithFourHex():
+    piIndexFilename = "Data/01HalfByte.dat"
+    piIndex = open(piIndexFilename)
 
-    return 
+    piList = []
+    piDictionary = {}
+    for line in piIndex:
+        # print line        
+        piDictionary[line[2:3]+line[7:8]+line[12:13]] = line[16:len(line) - 1]
+        piList.append([line[2:3]+line[7:8]+line[12:13], line[16:len(line) - 1]])
 
-def encode(inputFilename, outputFilename, piDictionary):
+
+    # print piList
+    # print piDictionary
+    return piDictionary
+
+def encode(inputFilename, outputFilename, piDictionary, chunkSize  = 2):
     with open(inputFilename, 'rb') as f:
         data = f.read().encode('hex').upper()
         chunks = [data[i:i+chunkSize] for i in range(0, len(data), chunkSize)]
-    print chunks
+    # print chunks
 
     outputFile = open("EncodedFiles/"+str(uuid.uuid4())+outputFilename, 'w')
 
+    indexLength = getLengthOfLongest(piDictionary)
+
+    outputFile.write("Index Length: "+str(indexLength)+"\n")
     for dataChunk in chunks:    
-        outputFile.write(base_encode(int(piDictionary[dataChunk]))+" ")
-        print base_encode(int(piDictionary[dataChunk]))
+        baseStr = base_encode(int(piDictionary[dataChunk]))
+        # if len(baseStr) < indexLength:
+            # for i in range(indexLength-len(baseStr)-1):
+        baseStr += ' '
+        outputFile.write(baseStr)
+        # print base_encode(int(piDictionary[dataChunk]))
 
     outputFile.close()
 
-
-
-    # TODO:
+    # TODO: DONE BABY
     #   - Encode filename/type, save to outputFilename
     #   - Get indices corresponding each chunk
     #   - Save indices to outputFilename 
 
-def decode(inputFilename, outputDirectory):
+def decode(inputFilename, outputFilename, piDictionary, chunkSize  = 2):
+    getLengthOfLongest(piDictionary)
+    
+    dataChunks = []
     with open(inputFilename, 'rb') as f:
-        data = f.read()
+        # data = f.read()
+        for line in f:
+            print len(line)
+            if len(line) > 20:
+                dataChunks = line.split()
+
+    outputFile = open("EncodedFiles/"+str(uuid.uuid4())+outputFilename, 'wb')
+
+    newPiDictionary = {}
+    for x in piDictionary:
+        newPiDictionary[piDictionary.get(x)] = x
+        print x, piDictionary.get(x)
+
+    for data in dataChunks:
+        print newPiDictionary.get(str(base_decode(data)))
+        outputFile.write(newPiDictionary.get(str(base_decode(data))).decode("hex"))
+
+    # print "49 in newPiDictionary:", newPiDictionary.get('521')
+    # # print len(newPiDictionary), len(piDictionary)
+    # # print newPiDictionary
+
+    # # for x in newPiDictionary:
+    #     # print x, newPiDictionary.get(x)
+
+    # # for x in piDictionary:
+    #     # print x, piDictionary.get(x)
+
 
     # TODO:
     #   - Decode filename/type
     #   - Get indices, compute to hex
     #   - Decode hex, save to outputDirectory
 
-
-def convertBase(incomingHex):
-    base35 = incomingHex
-
-    return base35
+def getKeyFromValue(piDictionary, value):
+    for x in piDictionary:
+        print x
 
 def printFile(inputFilename):
-    # with open(inputFilename, 'rb') as f:
-    #     data = f.read().encode('hex').upper()
-    #     print data
-
     inFile = open(inputFilename, 'rb')
     for line in inFile:
         print line
 
+def getLengthOfLongest(piDictionary):
+    length = 0
+    for x in piDictionary:
+        if len(piDictionary.get(x)) > length:
+            length = len(piDictionary.get(x))
+    return length
+
 def main(argv):
+    # print len(sys.argv)
+    # if len(sys.argv) == 4:
     script, filename = sys.argv
-                                
-    printFile(filename)  
-    # encode(filename, '_Encoded.pi', getPiWithTwoHex())
+
+    # encode(filename, '_Encoded_2.pi', getPiWithTwoHex(), 2)
+    decode(filename, '_Decoded_2.pi', getPiWithTwoHex(), 2)    
+    # encode(filename, '_Encoded_3.pi', getPiWithThreeHex(), 3)
+    # decode(filename, '_Decoded_3.pi', getPiWithThreeHex(), 3)
 
 
 
