@@ -117,7 +117,7 @@ def decode(inputFilename, outputFilename, piDictionary, chunkSize  = 2):
 
     for data in dataChunks:
         print newPiDictionary.get(str(base_decode(data)))
-        outputFile.write
+        outputFile.write(newPiDictionary.get(str(base_decode(data))).decode("hex"))
 
     # print "49 in newPiDictionary:", newPiDictionary.get('521')
     # # print len(newPiDictionary), len(piDictionary)
