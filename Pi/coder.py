@@ -98,15 +98,46 @@ def encode(inputFilename, outputFilename, piDictionary, chunkSize  = 2):
     #   - Save indices to outputFilename 
 
 def decode(inputFilename, outputFilename, piDictionary, chunkSize  = 2):
-    # with open(inputFilename, 'rb') as f:
-    #     data = f.read()
     getLengthOfLongest(piDictionary)
+    
+    dataChunks = []
+    with open(inputFilename, 'rb') as f:
+        # data = f.read()
+        for line in f:
+            print len(line)
+            if len(line) > 20:
+                dataChunks = line.split()
+
+    outputFile = open("EncodedFiles/"+str(uuid.uuid4())+outputFilename, 'wb')
+
+    newPiDictionary = {}
+    for x in piDictionary:
+        newPiDictionary[piDictionary.get(x)] = x
+        print x, piDictionary.get(x)
+
+    for data in dataChunks:
+        print newPiDictionary.get(str(base_decode(data)))
+        outputFile.write
+
+    # print "49 in newPiDictionary:", newPiDictionary.get('521')
+    # # print len(newPiDictionary), len(piDictionary)
+    # # print newPiDictionary
+
+    # # for x in newPiDictionary:
+    #     # print x, newPiDictionary.get(x)
+
+    # # for x in piDictionary:
+    #     # print x, piDictionary.get(x)
+
 
     # TODO:
     #   - Decode filename/type
     #   - Get indices, compute to hex
     #   - Decode hex, save to outputDirectory
 
+def getKeyFromValue(piDictionary, value):
+    for x in piDictionary:
+        print x
 
 def printFile(inputFilename):
     inFile = open(inputFilename, 'rb')
@@ -125,8 +156,8 @@ def main(argv):
     # if len(sys.argv) == 4:
     script, filename = sys.argv
 
-    encode(filename, '_Encoded_2.pi', getPiWithTwoHex(), 2)
-    # decode(filename, '_Decoded_2.pi', getPiWithTwoHex(), 2)    
+    # encode(filename, '_Encoded_2.pi', getPiWithTwoHex(), 2)
+    decode(filename, '_Decoded_2.pi', getPiWithTwoHex(), 2)    
     # encode(filename, '_Encoded_3.pi', getPiWithThreeHex(), 3)
     # decode(filename, '_Decoded_3.pi', getPiWithThreeHex(), 3)
 
