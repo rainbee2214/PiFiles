@@ -1,13 +1,13 @@
-('1', '0', '3', '7') Not found in tenthousand
+('1', '0', '3', '7') 302966
 ('1', '0', '9', 'B') Not found in tenthousand
 ('1', '2', '5', '4') Not found in tenthousand
 ('1', '3', '9', 'E') Not found in tenthousand
-('1', '3', 'F', '4') Not found in tenthousand
+('1', '3', 'F', '4') 311497
 ('1', '4', '5', '3') Not found in tenthousand
 ('1', '4', '5', '9') Not found in tenthousand
 ('1', '4', 'D', 'D') Not found in tenthousand
 ('1', '6', 'B', 'F') Not found in tenthousand
-('1', '7', '9', 'F') Not found in tenthousand
+('1', '7', '9', 'F') 312305
 ('1', '8', '7', '9') Not found in tenthousand
 ('1', '8', '9', '7') Not found in tenthousand
 ('1', 'A', '9', '6') Not found in tenthousand
@@ -15,30 +15,30 @@
 ('1', 'D', '8', '7') Not found in tenthousand
 ('1', 'D', '9', '4') Not found in tenthousand
 ('1', 'F', '9', 'E') Not found in tenthousand
-('1', 'F', 'C', '3') Not found in tenthousand
+('1', 'F', 'C', '3') 312630
 ('1', 'F', 'D', 'D') Not found in tenthousand
 ('2', '0', '3', '7') Not found in tenthousand
 ('2', '3', 'B', '5') Not found in tenthousand
-('2', '4', '0', '5') Not found in tenthousand
+('2', '4', '0', '5') 319616
 ('2', '5', '4', '1') Not found in tenthousand
-('2', '5', '4', '9') Not found in tenthousand
-('2', '7', '4', 'D') Not found in tenthousand
+('2', '5', '4', '9') 315888
+('2', '7', '4', 'D') 303792
 ('2', '7', '5', '2') Not found in tenthousand
 ('2', '7', 'E', '7') Not found in tenthousand
 ('2', '9', '2', 'A') Not found in tenthousand
 ('2', '9', '3', '3') Not found in tenthousand
 ('2', 'A', '1', '9') Not found in tenthousand
 ('2', 'B', '3', '3') Not found in tenthousand
-('2', 'B', '6', '9') Not found in tenthousand
+('2', 'B', '6', '9') 311975
 ('2', 'B', 'D', 'D') Not found in tenthousand
 ('2', 'F', '1', 'E') Not found in tenthousand
-('2', 'F', '8', '9') Not found in tenthousand
+('2', 'F', '8', '9') 302601
 ('2', 'F', 'E', '2') Not found in tenthousand
-('3', '2', '2', 'C') Not found in tenthousand
+('3', '2', '2', 'C') 314904
 ('3', '5', '0', '7') Not found in tenthousand
 ('3', '5', '0', 'B') Not found in tenthousand
-('3', '5', '1', '2') Not found in tenthousand
-('3', '5', '8', '1') Not found in tenthousand
+('3', '5', '1', '2') 307968
+('3', '5', '8', '1') 315106
 ('3', '6', '2', 'D') Not found in tenthousand
 ('3', '6', 'C', '9') Not found in tenthousand
 ('3', '7', 'A', '9') Not found in tenthousand
@@ -50,7 +50,7 @@
 ('3', 'A', '4', 'D') Not found in tenthousand
 ('3', 'B', '7', '7') Not found in tenthousand
 ('3', 'D', 'A', '1') Not found in tenthousand
-('3', 'D', 'B', '1') Not found in tenthousand
+('3', 'D', 'B', '1') 309842
 ('3', 'F', '3', '6') Not found in tenthousand
 ('4', '0', '0', 'D') Not found in tenthousand
 ('4', '1', '3', 'A') Not found in tenthousand
@@ -58,20 +58,20 @@
 ('4', '2', '4', 'C') 301138
 ('4', '4', '6', 'C') Not found in tenthousand
 ('4', '4', 'D', 'C') Not found in tenthousand
-('4', '6', '4', 'E') Not found in tenthousand
+('4', '6', '4', 'E') 316857
 ('4', '6', '7', 'E') Not found in tenthousand
 ('4', '8', '9', 'B') Not found in tenthousand
 ('4', '9', '0', 'C') Not found in tenthousand
 ('4', 'B', '3', '2') Not found in tenthousand
 ('4', 'B', '3', 'D') Not found in tenthousand
 ('4', 'B', 'B', 'E') Not found in tenthousand
-('4', 'C', 'C', '3') Not found in tenthousand
+('4', 'C', 'C', '3') 304512
 ('4', 'F', '3', '3') Not found in tenthousand
 ('4', 'F', 'D', '3') Not found in tenthousand
 ('5', '0', '4', '7') Not found in tenthousand
 ('5', '2', '6', '3') Not found in tenthousand
 ('5', '2', 'E', '6') Not found in tenthousand
-('5', '4', '3', '7') Not found in tenthousand
+('5', '4', '3', '7') 317904
 ('5', '4', '9', '4') Not found in tenthousand
 ('5', '8', '0', 'B') Not found in tenthousand
 ('5', '9', 'B', '4') Not found in tenthousand
@@ -80,13 +80,13 @@
 ('5', 'E', 'D', 'A') Not found in tenthousand
 ('6', '0', '4', '7') Not found in tenthousand
 ('6', '2', 'F', '5') Not found in tenthousand
-('6', '3', '8', '7') Not found in tenthousand
+('6', '3', '8', '7') 316051
 ('6', '5', '5', '9') Not found in tenthousand
-('6', '5', '5', 'D') Not found in tenthousand
+('6', '5', '5', 'D') 312401
 ('6', '6', '0', '2') Not found in tenthousand
 ('6', '8', '4', '5') Not found in tenthousand
 ('6', '8', '5', 'F') Not found in tenthousand
-('6', 'A', '9', 'D') Not found in tenthousand
+('6', 'A', '9', 'D') 312339
 ('6', 'B', '3', 'B') Not found in tenthousand
 ('6', 'C', '6', '5') Not found in tenthousand
 ('6', 'E', '7', 'B') Not found in tenthousand
@@ -95,7 +95,7 @@
 ('7', '3', 'B', '6') Not found in tenthousand
 ('7', '5', '1', '7') 300162
 ('7', '5', '4', '9') Not found in tenthousand
-('7', '6', 'F', 'D') Not found in tenthousand
+('7', '6', 'F', 'D') 318705
 ('7', '7', '0', 'B') Not found in tenthousand
 ('7', '8', '8', '6') Not found in tenthousand
 ('7', '8', '9', 'D') Not found in tenthousand
@@ -111,13 +111,13 @@
 ('8', 'A', '4', '9') Not found in tenthousand
 ('8', 'B', 'F', 'A') Not found in tenthousand
 ('8', 'E', '5', '6') Not found in tenthousand
-('8', 'F', '7', 'D') Not found in tenthousand
+('8', 'F', '7', 'D') 303826
 ('9', '0', '3', 'A') Not found in tenthousand
-('9', '1', 'F', '5') Not found in tenthousand
+('9', '1', 'F', '5') 303241
 ('9', '1', 'F', 'B') Not found in tenthousand
 ('9', '2', '5', 'A') Not found in tenthousand
 ('9', '4', '4', '5') Not found in tenthousand
-('9', '5', 'C', 'C') Not found in tenthousand
+('9', '5', 'C', 'C') 310228
 ('9', '6', '8', 'A') Not found in tenthousand
 ('9', '8', '4', '5') Not found in tenthousand
 ('9', '8', 'E', 'F') Not found in tenthousand
@@ -134,19 +134,19 @@
 ('A', 'E', 'D', '9') Not found in tenthousand
 ('A', 'F', '9', '7') Not found in tenthousand
 ('A', 'F', 'E', 'B') Not found in tenthousand
-('B', '0', 'B', '5') Not found in tenthousand
+('B', '0', 'B', '5') 315925
 ('B', '0', 'D', 'B') Not found in tenthousand
-('B', '2', '5', 'F') Not found in tenthousand
+('B', '2', '5', 'F') 315512
 ('B', '7', '2', 'A') Not found in tenthousand
 ('B', '7', '3', '3') Not found in tenthousand
 ('B', '7', '5', '3') Not found in tenthousand
-('B', '8', 'A', 'C') Not found in tenthousand
+('B', '8', 'A', 'C') 310660
 ('B', 'A', '0', 'E') Not found in tenthousand
-('B', 'A', '7', '4') Not found in tenthousand
-('B', 'D', '1', '6') Not found in tenthousand
+('B', 'A', '7', '4') 315767
+('B', 'D', '1', '6') 315937
 ('B', 'D', 'C', 'F') Not found in tenthousand
 ('B', 'E', '8', '5') Not found in tenthousand
-('B', 'E', '8', 'E') Not found in tenthousand
+('B', 'E', '8', 'E') 303296
 ('B', 'F', 'A', '7') Not found in tenthousand
 ('B', 'F', 'F', 'D') Not found in tenthousand
 ('C', '0', '0', 'C') Not found in tenthousand
@@ -163,7 +163,7 @@
 ('D', '3', '5', '1') Not found in tenthousand
 ('D', '4', 'A', '3') Not found in tenthousand
 ('D', '6', 'B', '7') Not found in tenthousand
-('D', '7', 'B', '9') Not found in tenthousand
+('D', '7', 'B', '9') 313474
 ('D', '7', 'D', '3') Not found in tenthousand
 ('D', '8', 'B', '7') Not found in tenthousand
 ('D', '9', '1', '9') Not found in tenthousand
@@ -180,18 +180,18 @@
 ('E', '3', '6', '3') Not found in tenthousand
 ('E', '4', 'A', 'E') Not found in tenthousand
 ('E', '5', '6', '7') Not found in tenthousand
-('E', '6', '2', 'B') Not found in tenthousand
+('E', '6', '2', 'B') 313783
 ('E', '7', '2', '9') Not found in tenthousand
 ('E', '7', '4', '3') Not found in tenthousand
 ('E', '8', '4', '9') Not found in tenthousand
-('E', 'A', '6', '7') Not found in tenthousand
+('E', 'A', '6', '7') 313015
 ('E', 'A', 'C', '7') Not found in tenthousand
 ('E', 'B', '0', '9') Not found in tenthousand
 ('E', 'B', '2', 'B') Not found in tenthousand
-('E', 'C', '1', '9') Not found in tenthousand
+('E', 'C', '1', '9') 311201
 ('E', 'C', '9', 'E') Not found in tenthousand
 ('E', 'C', 'E', '3') Not found in tenthousand
-('E', 'C', 'F', 'D') Not found in tenthousand
+('E', 'C', 'F', 'D') 311257
 ('E', 'D', '8', '6') Not found in tenthousand
 ('E', 'D', 'D', 'D') Not found in tenthousand
 ('E', 'F', '3', 'D') Not found in tenthousand
@@ -200,7 +200,7 @@
 ('F', '1', '2', '1') Not found in tenthousand
 ('F', '2', 'A', 'A') Not found in tenthousand
 ('F', '4', 'E', 'F') Not found in tenthousand
-('F', '6', '5', 'F') Not found in tenthousand
+('F', '6', '5', 'F') 309424
 ('F', '7', '2', '3') Not found in tenthousand
 ('F', '8', '4', '3') Not found in tenthousand
 ('F', 'F', '7', 'E') Not found in tenthousand
