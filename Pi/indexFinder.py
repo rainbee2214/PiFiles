@@ -3,7 +3,7 @@ import itertools
 from time import time
 
 validHex = '0123456789ABCDEF'
-repeat = 2
+repeat = 1
 
 threeBit = itertools.product(validHex, repeat=repeat)
 foundIndices = []

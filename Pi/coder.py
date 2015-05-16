@@ -94,8 +94,8 @@ def printFile(inputFilename):
 def main(argv):
     script, filename = sys.argv
                                 
-    printFile(filename)  
-    # encode(filename, '_Encoded.pi', getPiWithTwoHex())
+    # printFile(filename)  
+    encode(filename, '_Encoded.pi', getPiWithTwoHex())
 
 
 
