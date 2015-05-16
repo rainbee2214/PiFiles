@@ -2,7 +2,20 @@ import pi
 import string
 import uuid
 import os
-   
+from twilio.rest import TwilioRestClient
+ 
+def sendSMS(message):
+    # Your Account Sid and Auth Token from twilio.com/user/account
+    fromNumber = "+19027019415"
+    toNumber = "+19028188219"
+    account_sid = "AC159a87ecb340d7f1791f2959c9a951fa"
+    auth_token  = "d96192096e44d9dd87c3f4e8aaafa8cd"
+    client = TwilioRestClient(account_sid, auth_token)
+     
+    message = client.messages.create(body=message,
+        to=toNumber,    
+        from_=fromNumber) 
+
 BASE_LIST = string.digits + string.letters + string.punctuation
 BASE_DICT = dict((c, i) for i, c in enumerate(BASE_LIST))
 
@@ -87,7 +100,7 @@ def decode(inputFilename, outputFilename, piDictionary, chunkSize  = 2):
         # print newPiDictionary.get(str(base_decode(data)))
         outputFile.write(newPiDictionary.get(str(base_decode(data))).decode("hex"))
 
-def encodeMessage(inputMessage, piDictionary, chunkSize  = 2):
+def encodeMessage(inputMessage, piDictionary, chunkSize  = 2, sendToSMS = False):
     inputMessage = inputMessage.encode("hex").upper()
     chunks = [inputMessage[i:i+chunkSize] for i in range(0, len(inputMessage), chunkSize)]
 
@@ -99,10 +112,12 @@ def encodeMessage(inputMessage, piDictionary, chunkSize  = 2):
 
     print outputMessage
 
+    if sendToSMS:
+        sendSMS(outputMessage)
+
     return outputMessage
 
-def decodeMessage(inputMessage, piDictionary, chunkSize  = 2):
-    # chunks = [inputMessage[i:i+chunkSize] for i in range(0, len(inputMessage), chunkSize)]
+def decodeMessage(inputMessage, piDictionary, chunkSize  = 2, sendToSMS = False):
     chunks = inputMessage.split()
 
     newPiDictionary = {}
@@ -113,7 +128,9 @@ def decodeMessage(inputMessage, piDictionary, chunkSize  = 2):
     for dataChunk in chunks:    
         outputMessage += newPiDictionary.get(str(base_decode(dataChunk))).decode("hex")
 
-    # outputMessage = outputMessage.decode("hex")
     print outputMessage
 
+    if sendToSMS:
+        sendSMS(outputMessage)
+        
     return outputMessage
