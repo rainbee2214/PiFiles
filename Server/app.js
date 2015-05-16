@@ -40,7 +40,7 @@ app.use('/about', about);
 
 app.get('/encode', function (req, res) {
   console.log('encoding!', req.query.m);
-  PythonShell.run('cliMessage.py', { scriptPath: __dirname + "/Pi/", args: ["-e", '"'+req.query.m+'"']}, function (err, results) {
+  PythonShell.run('cliMessage.py', { scriptPath: __dirname + "/Pi/", args: ["-e", "False", '"'+req.query.m+'"']}, function (err, results) {
     console.log('err, results', err, results);
     res.json({ message: results[0] });
     // script finished 
@@ -49,7 +49,25 @@ app.get('/encode', function (req, res) {
 
 app.get('/decode', function (req, res) {
   console.log('decoding!', req.query.m);
-  PythonShell.run('cliMessage.py', { scriptPath: __dirname + "/Pi/", args: ["-d", req.query.m]}, function (err, results) {
+  PythonShell.run('cliMessage.py', { scriptPath: __dirname + "/Pi/", args: ["-d", "False", req.query.m]}, function (err, results) {
+    console.log('err, results', err, results);
+    res.json({ message: results[0] });
+    // script finished 
+  });
+});
+
+app.get('/encodesms', function (req, res) {
+  console.log('encoding!', req.query.m);
+  PythonShell.run('cliMessage.py', { scriptPath: __dirname + "/Pi/", args: ["-e", "True", '"'+req.query.m+'"']}, function (err, results) {
+    console.log('err, results', err, results);
+    res.json({ message: results[0] });
+    // script finished 
+  });
+});
+
+app.get('/decodesms', function (req, res) {
+  console.log('decoding!', req.query.m);
+  PythonShell.run('cliMessage.py', { scriptPath: __dirname + "/Pi/", args: ["-d", "True", req.query.m]}, function (err, results) {
     console.log('err, results', err, results);
     res.json({ message: results[0] });
     // script finished 
