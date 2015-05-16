@@ -12,7 +12,7 @@ foundIndices = []
 startOfStrings = time()
 
 currentString = ""
-for y in range(300000, 310000, 8):
+for y in range(300000, 330000, 8):
     print "index", y
     currentString += pi.getHexFromIndex(y)
 
