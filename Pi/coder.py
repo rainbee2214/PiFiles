@@ -54,11 +54,13 @@ def getPiWithFourHex():
     return piDictionary
 
 def encode(inputFilename, outputFilename, piDictionary, chunkSize  = 2):
+    print "Chunk size:", chunkSize, "Encoding ", inputFilename, "and writing to", outputFilename
     with open(inputFilename, 'rb') as f:
         data = f.read().encode('hex').upper()
         chunks = [data[i:i+chunkSize] for i in range(0, len(data), chunkSize)]
 
-    outputFile = open("EncodedFiles/"+str(uuid.uuid4())+outputFilename, 'w')
+    # outputFile = open("EncodedFiles/"+str(uuid.uuid4())+outputFilename, 'w')
+    outputFile = open("EncodedFiles/"+outputFilename, 'w')
 
     outputFile.write("ChunkSize:"+str(chunkSize)+ "\n")
     for dataChunk in chunks:    
@@ -69,21 +71,21 @@ def encode(inputFilename, outputFilename, piDictionary, chunkSize  = 2):
     outputFile.close()
 
 def decode(inputFilename, outputFilename, piDictionary, chunkSize  = 2):
+    print "Chunk size:", chunkSize, "Decoding ", inputFilename, "and writing to", outputFilename
     dataChunks = []
     with open(inputFilename, 'rb') as f:
         for line in f:
             if len(line) > 20: # Only use the second line
                 dataChunks = line.split()
 
-    outputFile = open("EncodedFiles/"+str(uuid.uuid4())+outputFilename, 'wb')
+    # outputFile = open("EncodedFiles/"+str(uuid.uuid4())+outputFilename, 'wb')
+    outputFile = open("EncodedFiles/"+outputFilename, 'wb')
 
     newPiDictionary = {}
     for x in piDictionary:
         newPiDictionary[piDictionary.get(x)] = x
-        # print x, piDictionary.get(x)
 
     for data in dataChunks:
-        # print newPiDictionary.get(str(base_decode(data)))
         outputFile.write(newPiDictionary.get(str(base_decode(data))).decode("hex"))
 
 def encodeMessage(inputMessage, piDictionary, chunkSize  = 2):
@@ -101,18 +103,16 @@ def encodeMessage(inputMessage, piDictionary, chunkSize  = 2):
     return outputMessage
 
 def decodeMessage(inputMessage, piDictionary, chunkSize  = 2):
-    # chunks = [inputMessage[i:i+chunkSize] for i in range(0, len(inputMessage), chunkSize)]
     chunks = inputMessage.split()
 
     newPiDictionary = {}
     for x in piDictionary:
         newPiDictionary[piDictionary.get(x)] = x
-        
+
     outputMessage = ''
     for dataChunk in chunks:    
         outputMessage += newPiDictionary.get(str(base_decode(dataChunk))).decode("hex")
 
-    # outputMessage = outputMessage.decode("hex")
     print outputMessage
 
     return outputMessage
