@@ -112,7 +112,7 @@ def encodeMessage(inputMessage, piDictionary, chunkSize  = 2, sendToSMS = False)
 
     print outputMessage
 
-    if sendToSMS:
+    if eval(sendToSMS):
         sendSMS(outputMessage)
 
     return outputMessage
@@ -130,7 +130,7 @@ def decodeMessage(inputMessage, piDictionary, chunkSize  = 2, sendToSMS = False)
 
     print outputMessage
 
-    if sendToSMS:
+    if eval(sendToSMS):
         sendSMS(outputMessage)
         
     return outputMessage
