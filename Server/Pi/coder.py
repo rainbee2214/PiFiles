@@ -58,12 +58,12 @@ def getPiWithThreeHex():
     return piDictionary
 
 def getPiWithFourHex():
-    piIndexFilename = os.path.join(os.path.dirname(__file__),"Data/01HalfByte.dat")
+    piIndexFilename = os.path.join(os.path.dirname(__file__),"02Byte.dat")
     piIndex = open(piIndexFilename)
 
     piDictionary = {}
     for line in piIndex:
-        piDictionary[line[2:3]+line[7:8]+line[12:13]] = line[16:len(line) - 1]
+        piDictionary[line[2:3]+line[7:8]+line[12:13]+line[17:18]] = line[21:len(line) - 1]
 
     return piDictionary
 
@@ -76,6 +76,7 @@ def encode(inputFilename, outputFilename, piDictionary, chunkSize  = 2):
 
     outputFile.write("ChunkSize:"+str(chunkSize)+ "\n")
     for dataChunk in chunks:    
+        print "Encoding data chunk:", dataChunk, piDictionary[dataChunk]
         baseStr = base_encode(int(piDictionary[dataChunk]))
         baseStr += ' '
         outputFile.write(baseStr)
